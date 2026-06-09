@@ -105,7 +105,7 @@
 
       <div class="alert alert-ok alert-target" style="display:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><div>Solicitud enviada. El reporte quedará disponible en su biblioteca en un plazo máximo de 24 horas hábiles.</div></div>
 
-      <div class="igrid">
+      <div class="igrid masonry">
 
         <div class="icard">
           <div class="icard-head">Bond Selection List</div>
@@ -121,17 +121,18 @@
             <p>Completando el siguiente formulario le haremos llegar un listado de bonos específicos.</p>
             <form data-mock novalidate>
               <div class="form-row">
-                <div class="field"><label class="lbl">Calidad crediticia</label><div class="select-wrap"><select class="select"><option>AAA</option><option>AA</option><option>A</option><option>BBB</option><option>BB</option><option>B</option><option>Sin restricción</option></select></div></div>
+                <div class="field"><label class="lbl">Rating desde</label><div class="select-wrap"><select class="select"><option>Sin mínimo</option><option>AAA</option><option>AA</option><option>A</option><option>BBB</option><option>BB</option><option>B</option></select></div></div>
+                <div class="field"><label class="lbl">Rating hasta</label><div class="select-wrap"><select class="select"><option>AAA</option><option>AA</option><option>A</option><option>BBB</option><option>BB</option><option>B</option><option>Sin máximo</option></select></div></div>
+              </div>
+              <div class="form-row">
                 <div class="field"><label class="lbl">Tipo de emisor</label><div class="select-wrap"><select class="select"><option>Gobierno</option><option>Corporativo</option><option>Supranacional</option><option>Indistinto</option></select></div></div>
-              </div>
-              <div class="form-row">
                 <div class="field"><label class="lbl">Monto mínimo operable</label><input type="number" class="input" placeholder="ej. 1.000" min="0"></div>
-                <div class="field"><label class="lbl">Moneda/s</label><input type="text" class="input" placeholder="USD, EUR…"></div>
               </div>
               <div class="form-row">
+                <div class="field"><label class="lbl">Moneda/s</label><input type="text" class="input" placeholder="USD, EUR…"></div>
                 <div class="field"><label class="lbl">YTM mínimo (%)</label><input type="number" class="input" placeholder="ej. 6" step="0.1"></div>
-                <div class="field"><label class="lbl">Vencimiento (años)</label><input type="number" class="input" placeholder="ej. 5" min="0"></div>
               </div>
+              <div class="field"><label class="lbl">Vencimiento (años)</label><input type="number" class="input" placeholder="ej. 5" min="0"></div>
               <div class="field"><label class="check"><input type="checkbox"> ¿Desea incluir bonos perpetuos y/o acciones preferidas?</label></div>
               <div class="field"><label class="lbl">Comentarios</label><textarea class="textarea" placeholder="Condiciones adicionales…" rows="2"></textarea></div>
               <button type="submit" class="btn btn-primary">Solicitar listado</button>

@@ -588,6 +588,9 @@ ul, ol { margin: 0; padding: 0 0 0 18px; }
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
 }
 .igrid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+/* masonry: tarjetas de distinta altura sin huecos verticales */
+.igrid.masonry { display: block; column-count: 2; column-gap: 16px; }
+.igrid.masonry > .icard { break-inside: avoid; margin: 0 0 16px; width: 100%; }
 .icard {
   border: 1px solid var(--border);
   border-radius: var(--r-md);
@@ -950,6 +953,7 @@ ul, ol { margin: 0; padding: 0 0 0 18px; }
   .banner .left { flex-direction: column; gap: 16px; }
   .icard-body { padding: 20px; }
   .igrid, .igrid.cols-3 { grid-template-columns: 1fr; }
+  .igrid.masonry { column-count: 1; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 22px; }
   .form-row, .form-row.cols-3 { grid-template-columns: 1fr; }
   .doc-grid { grid-template-columns: 1fr; }
