@@ -79,10 +79,6 @@
           <input type="text" placeholder="Buscar ISIN, ticker, reporte…">
           <kbd>⌘K</kbd>
         </div>
-        <button class="icon-btn" aria-label="Notificaciones">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
-          <span class="dot"></span>
-        </button>
         <div class="top-divider"></div>
         <div class="user-chip">
           <div style="text-align:right">
@@ -124,11 +120,10 @@
         <div class="hero-row">
           <div class="hero-text">
             <span class="eyebrow">Centro de mando · Portal de clientes</span>
-            <h1>Bienvenido,&nbsp;<span class="name">Asesor / Cliente</span></h1>
+            <h1 class="type-h1"><span id="typeText">Bienvenido, Asesor / Cliente</span><span class="type-caret" aria-hidden="true"></span></h1>
             <p>
               Su mesa de análisis: portafolios, estrategias e instrumentos de inversión
-              en un solo lugar. Cada solicitud queda en su biblioteca en un plazo máximo
-              de 24 horas hábiles.
+              en un solo lugar. Cada solicitud queda disponible en su biblioteca.
             </p>
           </div>
           <div class="hero-metrics">
@@ -139,10 +134,6 @@
             <div class="hero-metric">
               <span class="n">2.760</span>
               <span class="l">Productos bajo<br>seguimiento</span>
-            </div>
-            <div class="hero-metric">
-              <span class="n">24<strong>h</strong></span>
-              <span class="l">Plazo máximo<br>de entrega</span>
             </div>
           </div>
         </div>
@@ -259,7 +250,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           </div>
           <div>
-            <div class="t1">Todas las solicitudes responden en máximo 24 h hábiles.</div>
+            <div class="t1">Cada solicitud se gestiona con un plazo de respuesta definido por servicio.</div>
             <div class="t2">Una vez entregado, su reporte queda disponible en su biblioteca dentro de cada sección.</div>
           </div>
         </div>
@@ -274,5 +265,40 @@
 </div>
 
 <script src="assets/portal.js"></script>
+<script>
+// Hero typewriter: borra el saludo inicial y reescribe el lema de marca.
+(function () {
+  var el = document.getElementById('typeText');
+  if (!el) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.innerHTML = 'Convertimos información en <span class="name">criterio</span>.';
+    return;
+  }
+  var start = 'Bienvenido, Asesor / Cliente';
+  var finalText = 'Convertimos información en criterio.';
+  var TYPE = 55, ERASE = 28, HOLD_START = 1200, HOLD_GAP = 320;
+
+  function erase(text, i, cb) {
+    el.textContent = text.slice(0, i);
+    if (i > 0) setTimeout(function () { erase(text, i - 1, cb); }, ERASE);
+    else if (cb) cb();
+  }
+  function type(text, i, cb) {
+    el.textContent = text.slice(0, i);
+    if (i < text.length) setTimeout(function () { type(text, i + 1, cb); }, TYPE);
+    else if (cb) cb();
+  }
+
+  setTimeout(function () {
+    erase(start, start.length, function () {
+      setTimeout(function () {
+        type(finalText, 0, function () {
+          el.innerHTML = 'Convertimos información en <span class="name">criterio</span>.';
+        });
+      }, HOLD_GAP);
+    });
+  }, HOLD_START);
+})();
+</script>
 </body>
 </html>

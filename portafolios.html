@@ -76,10 +76,6 @@
           <input type="text" placeholder="Buscar ISIN, ticker, reporte…">
           <kbd>⌘K</kbd>
         </div>
-        <button class="icon-btn" aria-label="Notificaciones">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
-          <span class="dot"></span>
-        </button>
         <div class="top-divider"></div>
         <div class="user-chip">
           <div style="text-align:right">
@@ -112,7 +108,7 @@
         <div>Solicitud ingresada correctamente. El reporte quedará disponible en su biblioteca en un plazo máximo de 24 horas hábiles.</div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
+      <div class="grid-2">
 
         <div style="font-size:13px; color:var(--lcu-gray-4); line-height:1.75;">
           <p style="margin:0; color:var(--lcu-navy); font-weight:600; font-size:14px;">1) Diagnóstico y sugerencias</p>
@@ -187,7 +183,7 @@
 
       <div class="subhead"><div><span class="eyebrow muted">Holdings</span><h3>Top 10 Holdings</h3></div></div>
       <div class="card">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;">
+        <div class="grid-2" style="align-items:start;">
           <p style="margin:0; font-size:13px; color:var(--lcu-gray-4); line-height:1.7;">
             Reporte con la evolución de las 10 mayores tenencias de su cartera. Ingrese el formulario con ISIN y nombre del activo. Al cierre de cada mes el reporte quedará disponible en su biblioteca.
           </p>
@@ -207,6 +203,7 @@
       <div class="subhead"><div><span class="eyebrow muted">Biblioteca</span><h3>Mis Portafolios</h3></div></div>
       <p style="margin:-6px 0 16px; font-size:12px; color:var(--lcu-gray-4);">Contiene todos los reportes "Diagnóstico de Portafolio" solicitados por Usted.</p>
       <div class="card noPad" style="overflow:hidden;">
+        <div class="table-scroll">
         <table class="table">
           <thead><tr>
             <th>#</th><th>Código</th><th>Ingreso</th><th>Perfil</th><th>Portfolio</th><th>Rentabilidad</th><th>Diagnóstico</th><th>Estado</th>
@@ -235,6 +232,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
 
     </div>
